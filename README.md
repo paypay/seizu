@@ -17,7 +17,7 @@ Seizu includes:
 
 ## Getting started
 
-Seizu has a [quickstart guide](https://paypay.github.io/seizu/dev/quickstart.html), which can be used for evaluation, or development.
+Seizu has a [quickstart guide](https://paypay.github.io/seizu/dev/docker-compose.html#quickstart), which can be used for evaluation, or development.
 
 ## Documentation
 
