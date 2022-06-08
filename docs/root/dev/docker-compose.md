@@ -3,6 +3,14 @@
 ## Quickstart
 
 A full docker-compose setup is included that can start neo4j, dynamodb, telegraph, seizu (and its workers), and can provide a quick way of running cartography to load your neo4j database with data.
+
+First clone the seizu repo:
+
+```bash
+$> git clone https://github.com/paypay/seizu
+$> cd seizu
+```
+
 Note that chrome will not allow you to use websockets without SSL when using localhost.
 So, it's necessary to generate an SSL certificate that will be used by the docker-compose setup.
 
@@ -51,6 +59,20 @@ $> make yarn install
 ```
 
 ### Loading CVE data
+
+#### (temporary) build cartography's docker image
+
+.. note::
+
+   Cartography recently added the CVE module, which isn't yet tagged into a release. Also, cartography is currently working on adding a docker image into a public registry. Until then, it's necessary to first build cartography's image locally.
+
+```bash
+$> git clone https://github.com/lyft/cartography
+$> cd cartography
+$> docker build -t ghcr.io/lyft/cartography .
+```
+
+#### Run the make target
 
 The quickstart configuration provided by the docker-compose is based around the NIST CVE data, which can be easily loaded via a make target:
 

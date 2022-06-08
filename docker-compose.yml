@@ -211,7 +211,7 @@ services:
       proxy:
     command: yarn start
   cartography:
-    image: lyft/cartography
+    image: ghcr.io/lyft/cartography
     user: cartography
     init: true
     # We call cartography directly, so make sure it doesn't try to start on up
