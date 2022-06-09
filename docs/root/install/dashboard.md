@@ -9,6 +9,12 @@ Reports are topic-specific views of your graph data.
 Both dashboards and reports use a list of rows, which contain a list of panels; both are grid-based.
 Rows are rendered in the order specified in the configuration, and panels within rows are also rendered in the order specified.
 
+## Configuration version
+
+The dashboard configuration file has a ``version`` field that defines the format of the configuration file.
+This is used so that we can make changes to the file format, when necessary.
+This field is an int, and the current version is `1`.
+
 ## Panels
 
 Seizu supports various panel types that can be used to visualize graph data.
