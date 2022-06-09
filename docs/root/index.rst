@@ -24,6 +24,11 @@
     dev/contributing
 
 .. toctree::
+    :caption: Releases
+
+    changelog
+
+.. toctree::
     :caption: Get In Touch
     :hidden:
 
