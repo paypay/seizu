@@ -722,14 +722,13 @@ class ReportingConfig:
     """
     test
     """
+
     version: Optional[int] = field(
         default=1,
         metadata={
             "required": False,
-            "description": (
-                "The configuration file format version."
-            ),
-        }
+            "description": ("The configuration file format version."),
+        },
     )
 
     queries: Dict[str, str] = field(
