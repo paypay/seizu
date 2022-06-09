@@ -2,7 +2,6 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "definitions": {
         "Dashboard": {
-            "type": "object",
             "required": [
                 "rows"
             ],
@@ -20,10 +19,10 @@
                     }
                 }
             },
+            "type": "object",
             "additionalProperties": false
         },
         "Row": {
-            "type": "object",
             "required": [
                 "name",
                 "panels"
@@ -50,10 +49,10 @@
                     }
                 }
             },
+            "type": "object",
             "additionalProperties": false
         },
         "Panel": {
-            "type": "object",
             "required": [
                 "type"
             ],
@@ -210,10 +209,10 @@
                     ]
                 }
             },
+            "type": "object",
             "additionalProperties": false
         },
         "BarPanelSettings": {
-            "type": "object",
             "properties": {
                 "legend": {
                     "title": "legend",
@@ -225,10 +224,10 @@
                     "description": "The type of legend to use; ``row`` or ``column``. If unset, then no legend will be used."
                 }
             },
+            "type": "object",
             "additionalProperties": false
         },
         "PanelParam": {
-            "type": "object",
             "required": [
                 "name"
             ],
@@ -260,10 +259,10 @@
                     ]
                 }
             },
+            "type": "object",
             "additionalProperties": false
         },
         "PiePanelSettings": {
-            "type": "object",
             "properties": {
                 "legend": {
                     "title": "legend",
@@ -275,10 +274,10 @@
                     "description": "The type of legend to use; ``row`` or ``column``. If unset, then no legend will be used, and arc labels will be used instead."
                 }
             },
+            "type": "object",
             "additionalProperties": false
         },
         "Report": {
-            "type": "object",
             "required": [
                 "name",
                 "rows"
@@ -317,10 +316,10 @@
                     }
                 }
             },
+            "type": "object",
             "additionalProperties": false
         },
         "Input": {
-            "type": "object",
             "required": [
                 "type",
                 "input_id",
@@ -391,10 +390,10 @@
                     ]
                 }
             },
+            "type": "object",
             "additionalProperties": false
         },
         "InputDefault": {
-            "type": "object",
             "required": [
                 "label",
                 "value"
@@ -411,10 +410,10 @@
                     "description": "The value for the default."
                 }
             },
+            "type": "object",
             "additionalProperties": false
         },
         "ScheduledQuery": {
-            "type": "object",
             "required": [
                 "cypher",
                 "name"
@@ -497,10 +496,10 @@
                     }
                 }
             },
+            "type": "object",
             "additionalProperties": false
         },
         "ScheduledQueryAction": {
-            "type": "object",
             "required": [
                 "action_config",
                 "action_type"
@@ -525,10 +524,10 @@
                     ]
                 }
             },
+            "type": "object",
             "additionalProperties": false
         },
         "ScheduledQueryParam": {
-            "type": "object",
             "required": [
                 "name",
                 "value"
@@ -549,10 +548,10 @@
                     ]
                 }
             },
+            "type": "object",
             "additionalProperties": false
         },
         "ScheduledQueryWatchScan": {
-            "type": "object",
             "properties": {
                 "groupid": {
                     "title": "groupid",
@@ -591,10 +590,20 @@
                     ]
                 }
             },
+            "type": "object",
             "additionalProperties": false
         },
         "ReportingConfig": {
             "properties": {
+                "version": {
+                    "title": "version",
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "default": 1,
+                    "description": "The configuration file format version."
+                },
                 "queries": {
                     "title": "queries",
                     "type": "object",

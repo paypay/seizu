@@ -18,4 +18,5 @@ def test_config(mocker):
     assert ret_json["console_url"] == "https://localhost:7473"
     for key in ["queries", "dashboard", "reports"]:
         assert key in ret_json["config"].keys()
+    assert ret_json["config"]["version"] == 1
     assert "$schema" in ret_json["schema"].keys()
