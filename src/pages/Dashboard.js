@@ -9,7 +9,6 @@ import {
   Typography
 } from '@mui/material';
 import Loader from 'react-loader-spinner';
-import MuiMarkdown from 'mui-markdown';
 
 import { ConfigContext } from 'src/config.context';
 import CypherBar from 'src/components/reports/CypherBar';
@@ -19,6 +18,7 @@ import CypherCount from 'src/components/reports/CypherCount';
 import CypherTable from 'src/components/reports/CypherTable';
 import CypherVerticalTable from 'src/components/reports/CypherVerticalTable';
 import OncallTable from 'src/components/reports/OncallTable';
+import Markdown from 'src/components/reports/Markdown';
 
 function Dashboard() {
   const { config } = useContext(ConfigContext);
@@ -121,37 +121,11 @@ function Dashboard() {
         );
       } else if (item.type === 'markdown') {
         itemComponent = (
-          <MuiMarkdown
-            overrides={{
-              h1: {
-                component: 'h2'
-              },
-              h2: {
-                component: 'h3'
-              },
-              h3: {
-                component: 'h4'
-              },
-              h4: {
-                component: 'h5'
-              },
-              h5: {
-                component: 'h6'
-              },
-              ol: {
-                props: {
-                  className: 'mui-markdown-ol'
-                }
-              },
-              ul: {
-                props: {
-                  className: 'mui-markdown-ul'
-                }
-              }
-            }}
-          >
-            {item.markdown}
-          </MuiMarkdown>
+          <Markdown
+            markdown={item.markdown}
+            markdownSettings={item.markdown_settings}
+            queries={queries}
+          />
         );
       }
 

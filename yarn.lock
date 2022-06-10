@@ -1577,6 +1577,11 @@
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz#b2ac626d6cb9c8718ab459166d4bb405b8ffa78b"
   integrity sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==
 
+"@markdoc/markdoc@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@markdoc/markdoc/-/markdoc-0.1.2.tgz#401c7536ed1fd33951458747d2d74f217241e142"
+  integrity sha512-3p+JTC1A0eqBdrl2UOIRoy+FLKtG1mh81R3Zzdm7FJiQIMt2mJmqmVQNDf3Md62G9rTtbj0ZuxlEattMbaslbw==
+
 "@mui/base@5.0.0-alpha.83":
   version "5.0.0-alpha.83"
   resolved "https://registry.yarnpkg.com/@mui/base/-/base-5.0.0-alpha.83.tgz#8ac60dc7315f8ae001233e8e10398e31833625bd"
@@ -6786,11 +6791,6 @@ mui-datatables@^4.0.0:
     react-sortable-tree-patch-react-17 "^2.9.0"
     react-to-print "^2.8.0"
     tss-react "^3.6.0"
-
-mui-markdown@^0.5.3:
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/mui-markdown/-/mui-markdown-0.5.3.tgz#b50e4c43825cf5701a00279340c8b86e7115aa39"
-  integrity sha512-hSs2XhxMHxFrwyFbmRg9r1MonBaVy04aoY0fG2e525MBIHkIPTy/JIauH0WRZ12i7bwg5dh+QNn5gkb97VoKog==
 
 multicast-dns@^7.2.4:
   version "7.2.5"

@@ -1,6 +1,6 @@
 import { createStyles, makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles(() =>
+const useStyles = makeStyles((theme) =>
   createStyles({
     '@global': {
       '*': {
@@ -18,21 +18,65 @@ const useStyles = makeStyles(() =>
         width: '100%'
       },
       a: {
+        color: theme.palette.primary.main,
         textDecoration: 'none'
       },
       '#root': {
         height: '100%',
         width: '100%'
       },
-      '.mui-markdown-ol': {
+      // Update CSS for markdoc, which places nodes under "article" nodes
+      'article ol': {
         paddingLeft: 40,
         paddingTop: 10,
         paddingBottom: 10
       },
-      '.mui-markdown-ul': {
+      'article ul': {
         paddingLeft: 40,
         paddingTop: 10,
         paddingBottom: 10
+      },
+      'article h1': {
+        fontWeight: 500,
+        fontSize: 29,
+        letterSpacing: '-0.24px',
+        paddingTop: 10,
+        paddingBottom: 5
+      },
+      'article h2': {
+        fontWeight: 500,
+        fontSize: 24,
+        letterSpacing: '-0.06px',
+        paddingTop: 10,
+        paddingBottom: 5
+      },
+      'article h3': {
+        fontWeight: 500,
+        fontSize: 20,
+        letterSpacing: '-0.05px',
+        paddingTop: 10,
+        paddingBottom: 5
+      },
+      'article h4': {
+        fontWeight: 500,
+        fontSize: 16,
+        letterSpacing: '-0.05px',
+        paddingTop: 10,
+        paddingBottom: 5
+      },
+      'article h5': {
+        fontWeight: 500,
+        fontSize: 16,
+        letterSpacing: '-0.05px',
+        paddingTop: 10,
+        paddingBottom: 5
+      },
+      'article h6': {
+        fontWeight: 500,
+        fontSize: 14,
+        letterSpacing: '-0.05px',
+        paddingTop: 10,
+        paddingBottom: 5
       }
     }
   })

@@ -112,39 +112,6 @@ class Input:
 
 
 @dataclass
-class BarPanelSettings:
-    legend: Optional[str] = field(
-        metadata={
-            "required": False,
-            "description": (
-                "The type of legend to use; ``row`` or ``column``. If unset,"
-                " then no legend will be used."
-            ),
-        }
-    )
-
-    class Meta:
-        ordered = True
-
-
-@dataclass
-class PiePanelSettings:
-    legend: Optional[str] = field(
-        metadata={
-            "required": False,
-            "description": (
-                "The type of legend to use; ``row`` or ``column``. If unset,"
-                " then no legend will be used, and arc labels will be used"
-                " instead."
-            ),
-        }
-    )
-
-    class Meta:
-        ordered = True
-
-
-@dataclass
 class PanelParam:
     name: str = field(
         metadata={
@@ -181,6 +148,93 @@ class PanelParam:
                     """
                 ],
             },
+        },
+    )
+
+    class Meta:
+        ordered = True
+
+
+@dataclass
+class BarPanelSettings:
+    legend: Optional[str] = field(
+        metadata={
+            "required": False,
+            "description": (
+                "The type of legend to use; ``row`` or ``column``. If unset,"
+                " then no legend will be used."
+            ),
+        }
+    )
+
+    class Meta:
+        ordered = True
+
+
+@dataclass
+class PiePanelSettings:
+    legend: Optional[str] = field(
+        metadata={
+            "required": False,
+            "description": (
+                "The type of legend to use; ``row`` or ``column``. If unset,"
+                " then no legend will be used, and arc labels will be used"
+                " instead."
+            ),
+        }
+    )
+
+    class Meta:
+        ordered = True
+
+
+@dataclass
+class MarkdownPanelSettingsVariables:
+    name: str = field(
+        metadata={
+            "required": True,
+            "description": "The variable name to be used within the markdown.",
+        }
+    )
+
+    cypher: str = field(
+        metadata={
+            "required": True,
+            "description": "A reference to a cypher from the cypher section of the configuration.",
+            "examples": ["cves"],
+        }
+    )
+
+    params: List[PanelParam] = field(
+        default_factory=list,
+        metadata={
+            "required": False,
+            "description": (
+                "A list of parameters to send into the query. The parameters can"
+                " directly have values. Currently does not support inputs."
+            ),
+            "examples": [
+                """
+                .. code-block:: yaml
+
+                  params:
+                    - name: integrityImpact
+                      value: HIGH
+                """
+            ],
+        },
+    )
+
+
+@dataclass
+class MarkdownPanelSettings:
+    variables: List[MarkdownPanelSettingsVariables] = field(
+        default_factory=list,
+        metadata={
+            "required": False,
+            "description": (
+                "Variables to inject into markdoc, for use within the markdown."
+            ),
         },
     )
 
@@ -337,6 +391,23 @@ class Panel:
 
                   pie_settings:
                     legend: column
+                """
+            ],
+        },
+    )
+
+    markdown_settings: Optional[MarkdownPanelSettings] = field(
+        default=None,
+        metadata={
+            "description": "Settings specific to markdown panels.",
+            "examples": [
+                """
+                .. code-block:: yaml
+
+                  markdown_settings:
+                    variables:
+                      - name: cves
+                        cypher: cves-total
                 """
             ],
         },
