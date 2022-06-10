@@ -2,9 +2,6 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "definitions": {
         "Dashboard": {
-            "required": [
-                "rows"
-            ],
             "properties": {
                 "rows": {
                     "title": "rows",
@@ -19,14 +16,13 @@
                     }
                 }
             },
+            "required": [
+                "rows"
+            ],
             "type": "object",
             "additionalProperties": false
         },
         "Row": {
-            "required": [
-                "name",
-                "panels"
-            ],
             "properties": {
                 "name": {
                     "title": "name",
@@ -49,13 +45,14 @@
                     }
                 }
             },
+            "required": [
+                "name",
+                "panels"
+            ],
             "type": "object",
             "additionalProperties": false
         },
         "Panel": {
-            "required": [
-                "type"
-            ],
             "properties": {
                 "type": {
                     "title": "_type",
@@ -135,6 +132,17 @@
                         "\n                .. code-block:: markdown\n\n                    ## Affects\n\n                    Versions x.x.x - x.x.x\n\n                    ## Recommended action\n\n                    Upgrade to the latest version of the software.\n                "
                     ]
                 },
+                "markdown_settings": {
+                    "type": "object",
+                    "$ref": "#/definitions/MarkdownPanelSettings",
+                    "description": "Settings specific to markdown panels.",
+                    "examples": [
+                        "\n                .. code-block:: yaml\n\n                  markdown_settings:\n                    variables:\n                      - name: cves\n                        cypher: cves-total\n                "
+                    ],
+                    "default": {
+                        "variables": []
+                    }
+                },
                 "metric": {
                     "title": "metric",
                     "type": [
@@ -209,6 +217,9 @@
                     ]
                 }
             },
+            "required": [
+                "type"
+            ],
             "type": "object",
             "additionalProperties": false
         },
@@ -227,10 +238,57 @@
             "type": "object",
             "additionalProperties": false
         },
-        "PanelParam": {
+        "MarkdownPanelSettings": {
+            "properties": {
+                "variables": {
+                    "title": "variables",
+                    "type": "array",
+                    "description": "Variables to inject into markdoc, for use within the markdown.",
+                    "items": {
+                        "type": "object",
+                        "$ref": "#/definitions/MarkdownPanelSettingsVariables"
+                    }
+                }
+            },
+            "type": "object",
+            "additionalProperties": false
+        },
+        "MarkdownPanelSettingsVariables": {
+            "properties": {
+                "cypher": {
+                    "title": "cypher",
+                    "type": "string",
+                    "description": "A reference to a cypher from the cypher section of the configuration.",
+                    "examples": [
+                        "cves"
+                    ]
+                },
+                "name": {
+                    "title": "name",
+                    "type": "string",
+                    "description": "The variable name to be used within the markdown."
+                },
+                "params": {
+                    "title": "params",
+                    "type": "array",
+                    "description": "A list of parameters to send into the query. The parameters can directly have values. Currently does not support inputs.",
+                    "examples": [
+                        "\n                .. code-block:: yaml\n\n                  params:\n                    - name: integrityImpact\n                      value: HIGH\n                "
+                    ],
+                    "items": {
+                        "type": "object",
+                        "$ref": "#/definitions/PanelParam"
+                    }
+                }
+            },
             "required": [
+                "cypher",
                 "name"
             ],
+            "type": "object",
+            "additionalProperties": false
+        },
+        "PanelParam": {
             "properties": {
                 "input_id": {
                     "title": "input_id",
@@ -259,6 +317,9 @@
                     ]
                 }
             },
+            "required": [
+                "name"
+            ],
             "type": "object",
             "additionalProperties": false
         },
@@ -278,10 +339,6 @@
             "additionalProperties": false
         },
         "Report": {
-            "required": [
-                "name",
-                "rows"
-            ],
             "properties": {
                 "inputs": {
                     "title": "inputs",
@@ -316,15 +373,14 @@
                     }
                 }
             },
+            "required": [
+                "name",
+                "rows"
+            ],
             "type": "object",
             "additionalProperties": false
         },
         "Input": {
-            "required": [
-                "type",
-                "input_id",
-                "label"
-            ],
             "properties": {
                 "type": {
                     "title": "_type",
@@ -390,14 +446,15 @@
                     ]
                 }
             },
+            "required": [
+                "type",
+                "input_id",
+                "label"
+            ],
             "type": "object",
             "additionalProperties": false
         },
         "InputDefault": {
-            "required": [
-                "label",
-                "value"
-            ],
             "properties": {
                 "label": {
                     "title": "label",
@@ -410,14 +467,14 @@
                     "description": "The value for the default."
                 }
             },
+            "required": [
+                "label",
+                "value"
+            ],
             "type": "object",
             "additionalProperties": false
         },
         "ScheduledQuery": {
-            "required": [
-                "cypher",
-                "name"
-            ],
             "properties": {
                 "actions": {
                     "title": "actions",
@@ -496,14 +553,14 @@
                     }
                 }
             },
+            "required": [
+                "cypher",
+                "name"
+            ],
             "type": "object",
             "additionalProperties": false
         },
         "ScheduledQueryAction": {
-            "required": [
-                "action_config",
-                "action_type"
-            ],
             "properties": {
                 "action_config": {
                     "description": "The configuration for the action. See the documentation for the relevant scheduled query module for information about the configuration needed for each action type.",
@@ -524,14 +581,14 @@
                     ]
                 }
             },
+            "required": [
+                "action_config",
+                "action_type"
+            ],
             "type": "object",
             "additionalProperties": false
         },
         "ScheduledQueryParam": {
-            "required": [
-                "name",
-                "value"
-            ],
             "properties": {
                 "name": {
                     "title": "name",
@@ -548,6 +605,10 @@
                     ]
                 }
             },
+            "required": [
+                "name",
+                "value"
+            ],
             "type": "object",
             "additionalProperties": false
         },

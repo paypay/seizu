@@ -203,7 +203,15 @@ To render markdown, use a ``markdown`` panel.
 |-------|-------------|
 | markdown | The markdown to render. |
 | type | The type of panel. ``markdown``, for this panel type. |
+| markdown\_settings | An object of settings specific to pie panels. |
+| markdown\_settings.variables | A list of variables as dictionaries (with keys ``name`` and ``cypher``), used to inject variables into the markdown, for use with markdoc functions. See the [the MarkdownPanelSettingsVariables schema](schema.html#markdownpanelsettingsvariables) for more information. |
 | size | The width of this panel. |
+
+We're using markdoc for markdown rendering, which supports variables, functions, etc. in the markdown. Currently, we support injecting variables from queries, and using those variables in functions.
+
+Currently supported markdoc functions:
+
+* ``value``: Return the value of a specified key from the specified variable. Example (return ``total`` from ``cves``): ``{% value("cves", "total") %}``
 
 #### Example
 
@@ -218,6 +226,13 @@ To render markdown, use a ``markdown`` panel.
 
               ## Recommended action
               Upgrade to log4j 2.17.1 or higher.
+
+              ## Current counts
+              Total: {% value("cves", "total") %}
+            markdown_settings:
+              variables:
+                - name: cves
+                  cypher: log4shell-cves-total
             type: markdown
             size: 12
 ```

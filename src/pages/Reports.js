@@ -11,7 +11,6 @@ import {
 } from '@mui/material';
 import Loader from 'react-loader-spinner';
 import Error from '@mui/icons-material/Error';
-import MuiMarkdown from 'mui-markdown';
 
 import { ConfigContext } from 'src/config.context';
 import { getQueryStringValue } from 'src/components/QueryString';
@@ -25,6 +24,7 @@ import CypherAutocomplete from 'src/components/reports/CypherAutocomplete';
 import FreeTextInput from 'src/components/reports/FreeTextInput';
 import CypherOncallTable from 'src/components/reports/CypherOncallTable';
 import OncallTable from 'src/components/reports/OncallTable';
+import Markdown from 'src/components/reports/Markdown';
 
 function Reports() {
   const { id } = useParams();
@@ -261,37 +261,11 @@ function Reports() {
         }
       } else if (item.type === 'markdown') {
         itemComponent = (
-          <MuiMarkdown
-            overrides={{
-              h1: {
-                component: 'h2'
-              },
-              h2: {
-                component: 'h3'
-              },
-              h3: {
-                component: 'h4'
-              },
-              h4: {
-                component: 'h5'
-              },
-              h5: {
-                component: 'h6'
-              },
-              ol: {
-                props: {
-                  className: 'mui-markdown-ol'
-                }
-              },
-              ul: {
-                props: {
-                  className: 'mui-markdown-ul'
-                }
-              }
-            }}
-          >
-            {item.markdown}
-          </MuiMarkdown>
+          <Markdown
+            markdown={item.markdown}
+            markdownSettings={item.markdown_settings}
+            queries={queries}
+          />
         );
       }
       let size;
