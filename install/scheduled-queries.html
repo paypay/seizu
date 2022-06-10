@@ -1,0 +1,763 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Scheduled Queries &#8212; Seizu Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Pushing Panel Data to Statsd" href="stats.html" />
+    <link rel="prev" title="Dashboard Schema" href="schema.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#install/scheduled-queries" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="Seizu Documentation  documentation"
+           class="md-header-nav__button md-logo">
+          
+              <img src="../_static/favicon.png" height="26"
+                   alt="Seizu Documentation documentation logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">Seizu Documentation  documentation</span>
+          <span class="md-header-nav__topic"> Scheduled Queries </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/paypay/seizu" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    seizu
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+            
+            <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">Seizu</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="Seizu Documentation documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/favicon.png" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="Seizu Documentation documentation">Seizu Documentation  documentation</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/paypay/seizu" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    seizu
+  </div>
+</a>
+    </div>
+  
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Installation &amp; Configuration</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="backend.html" class="md-nav__link">Backend Installation & Configuration</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="dashboard.html" class="md-nav__link">Dashboard Configuration</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="schema.html" class="md-nav__link">Dashboard Schema</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Scheduled Queries </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">Scheduled Queries</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#install-scheduled-queries--page-root" class="md-nav__link">Scheduled Queries</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#purpose" class="md-nav__link">Purpose</a>
+        </li>
+        <li class="md-nav__item"><a href="#configuration" class="md-nav__link">Configuration</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#scheduling" class="md-nav__link">Scheduling</a>
+        </li>
+        <li class="md-nav__item"><a href="#built-in-actions" class="md-nav__link">Built-in Actions</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#slack" class="md-nav__link">slack</a>
+        </li>
+        <li class="md-nav__item"><a href="#sqs" class="md-nav__link">sqs</a>
+        </li>
+        <li class="md-nav__item"><a href="#log" class="md-nav__link">log</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#custom-actions" class="md-nav__link">Custom actions</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#run-the-schedule-queries-worker" class="md-nav__link">Run the <code class="docutils literal notranslate"><span class="pre">schedule-queries</span></code> worker</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/install/scheduled-queries.md.txt">Show Source</a> </li>
+
+  </ul>
+</nav>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#purpose" class="md-nav__link">Purpose</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#configuration" class="md-nav__link">Configuration</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#run-the-schedule-queries-worker" class="md-nav__link">Run the <code class="docutils literal notranslate"><span class="pre">schedule-queries</span></code> worker</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="stats.html" class="md-nav__link">Pushing Panel Data to Statsd</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Development</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../dev/docker-compose.html" class="md-nav__link">docker-compose</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../dev/dependencies.html" class="md-nav__link">Managing Dependencies</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../dev/test.html" class="md-nav__link">Running Tests</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../dev/contributing.html" class="md-nav__link">Contributing</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Releases</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../changelog.html" class="md-nav__link">Changelog</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Get In Touch</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../contact/security.html" class="md-nav__link">Security</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../contact/code-of-conduct.html" class="md-nav__link">Contributor Covenant Code of Conduct</a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#install-scheduled-queries--page-root" class="md-nav__link">Scheduled Queries</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#purpose" class="md-nav__link">Purpose</a>
+        </li>
+        <li class="md-nav__item"><a href="#configuration" class="md-nav__link">Configuration</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#scheduling" class="md-nav__link">Scheduling</a>
+        </li>
+        <li class="md-nav__item"><a href="#built-in-actions" class="md-nav__link">Built-in Actions</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#slack" class="md-nav__link">slack</a>
+        </li>
+        <li class="md-nav__item"><a href="#sqs" class="md-nav__link">sqs</a>
+        </li>
+        <li class="md-nav__item"><a href="#log" class="md-nav__link">log</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#custom-actions" class="md-nav__link">Custom actions</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#run-the-schedule-queries-worker" class="md-nav__link">Run the <code class="docutils literal notranslate"><span class="pre">schedule-queries</span></code> worker</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/install/scheduled-queries.md.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  <section id="scheduled-queries">
+<h1 id="install-scheduled-queries--page-root">Scheduled Queries<a class="headerlink" href="#install-scheduled-queries--page-root" title="Permalink to this headline">¶</a></h1>
+<section id="purpose">
+<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+<p>Dashboards are a good visual representation of a system, for when you want to actively check something, but sometimes you want to be passively notified about changes in the graph data.</p>
+<p>Seizu can run queries on a set schedule, or when the SyncMetadata graph data changes.
+It can take the query results and pass them into a list of configurable actions.</p>
+</section>
+<section id="configuration">
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>Scheduled queries are configured as part of the dashboard configuration.</p>
+<table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>A user-friendly name for the scheduled query.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cypher</p></td>
+<td><p>A cypher query to use for this scheduled query. This is a reference to a query in the queries configuration section. The query must return the data as <code class="docutils literal notranslate"><span class="pre">details</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>params</p></td>
+<td><p>A list of parameters to pass into the query. See <a class="reference external" href="schema.html#panelparam">the PanelParam schema</a> for more info.</p></td>
+</tr>
+<tr class="row-odd"><td><p>frequency</p></td>
+<td><p>The frequency, in minutes, to run this query. Mutually exclusive with <code class="docutils literal notranslate"><span class="pre">watch_scans</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>watch_scans</p></td>
+<td><p>A list of SyncMetadata types that will be watched to trigger this query. Each list item is a dictionary, which takes <code class="docutils literal notranslate"><span class="pre">grouptype</span></code> and <code class="docutils literal notranslate"><span class="pre">syncedtype</span></code>. The query will be triggered if any list item matches. Mutually exclusive with <code class="docutils literal notranslate"><span class="pre">frequency</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>enabled</p></td>
+<td><p>Whether or not this scheduled query will be run.</p></td>
+</tr>
+<tr class="row-even"><td><p>actions</p></td>
+<td><p>A list of actions to run, for the query results. See the built-in actions section, or the documentation specific for a custom action for details on how to configure this.</p></td>
+</tr>
+</tbody>
+</table>
+<section id="scheduling">
+<h3 id="scheduling">Scheduling<a class="headerlink" href="#scheduling" title="Permalink to this headline">¶</a></h3>
+<p>To schedule a job to run on a frequency, use the <code class="docutils literal notranslate"><span class="pre">frequency</span></code> setting.
+This setting is based on minutes.
+The following scheduled query will run every 24 hours:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">recent-cves-by-severity</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Recently published HIGH/CRITICAL CVEs</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">recent-cves</span><span class="w"></span>
+<span class="w">  </span><span class="nt">params</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">syncedtype</span><span class="w"></span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">recent</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">base_severity</span><span class="w"></span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HIGH</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CRITICAL</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># every 24 hours</span><span class="w"></span>
+<span class="w">  </span><span class="nt">frequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1440</span><span class="w"></span>
+<span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">  </span><span class="nt">actions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">action_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">slack</span><span class="w"></span>
+<span class="w">      </span><span class="nt">action_config</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Recently published HIGH/CRITICAL CVEs</span><span class="w"></span>
+<span class="w">        </span><span class="nt">initial_comment</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
+<span class="w">          </span><span class="no">The following HIGH/CRITICAL CVEs have been published in the last 2 hours.</span><span class="w"></span>
+<span class="w">        </span><span class="nt">channels</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="c1"># vulnerabilities-alert</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">C00000000</span><span class="w"></span>
+</pre></div>
+</div>
+<p>If you are using cartography, you can also have a query schedule itself based on a change in the SyncMetadata for a particular type of sync.
+The following scheduled query will be triggered when a kubernetes sync successfully completes:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">images-with-no-scan</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">K8s container images with no vulnerability scans</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">k8s-images-without-scans</span><span class="w"></span>
+<span class="w">  </span><span class="nt">watch_scans</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">grouptype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">KubernetesCluster</span><span class="w"></span>
+<span class="w">      </span><span class="nt">syncedtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">KubernetesCluster</span><span class="w"></span>
+<span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">  </span><span class="nt">actions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">action_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sqs</span><span class="w"></span>
+<span class="w">      </span><span class="nt">action_config</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">sqs_queue</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">k8s-image-scanner</span><span class="w"></span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">watch_scans</span></code> works by tracking the schedule query in the graph, and comparing the time of the SyncMetadata nodes to the last time the scheduled query ran.
+Due to this, when a new query is added, it will be run immediately, and then only run again after changes are detected.</p>
+</section>
+<section id="built-in-actions">
+<h3 id="built-in-actions">Built-in Actions<a class="headerlink" href="#built-in-actions" title="Permalink to this headline">¶</a></h3>
+<section id="slack">
+<h4 id="slack">slack<a class="headerlink" href="#slack" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">slack</span></code> scheduled query action module can take query results, and attach them as a CSV to a slack message.</p>
+<p>The following settings can be set in <code class="docutils literal notranslate"><span class="pre">action_config</span></code> for this module:</p>
+<table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>The title of the slack message to send. Required.</p></td>
+</tr>
+<tr class="row-odd"><td><p>initial_comment</p></td>
+<td><p>The message contents. The CSV will be attached to this message. Required.</p></td>
+</tr>
+<tr class="row-even"><td><p>channels</p></td>
+<td><p>A list of channel IDs to send this message to. This must be channel IDs and not channel names. Required.</p></td>
+</tr>
+</tbody>
+</table>
+<p>This action module requires the following environment variable configuration to be set:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SLACK_OAUTH_BOT_TOKEN</span></code>: The slack oauth API bot token, for authentication.</p></li>
+</ul>
+</section>
+<section id="sqs">
+<h4 id="sqs">sqs<a class="headerlink" href="#sqs" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">sqs</span></code> scheduled query action module can take query results and enqueue each result into a specified SQS queue.</p>
+<p>The following settings can be set in <code class="docutils literal notranslate"><span class="pre">action_config</span></code> for this module:</p>
+<table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>sqs_queue</p></td>
+<td><p>The SQS queue name to enqueue results into. Required.</p></td>
+</tr>
+</tbody>
+</table>
+<p>For local development purposes, the <code class="docutils literal notranslate"><span class="pre">sqs</span></code> module also has two configuration options:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SQS_CREATE_SCHEDULED_QUERY_QUEUES</span></code>: Whether or not to attempt to automatically create the configured queues.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SQS_URL</span></code>: URL for the SQS server. For use when running a local/fake SQS server.</p></li>
+</ul>
+</section>
+<section id="log">
+<h4 id="log">log<a class="headerlink" href="#log" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">log</span></code> scheduled query action module can take query results and log the results.</p>
+<p>The following settings can be set in <code class="docutils literal notranslate"><span class="pre">action_config</span></code> for this module:</p>
+<table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>message</p></td>
+<td><p>The log message to log. Default: <code class="docutils literal notranslate"><span class="pre">Result</span> <span class="pre">for</span> <span class="pre">&lt;scheduled_query_id&gt;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>level</p></td>
+<td><p>The log level to use. Valid values: <code class="docutils literal notranslate"><span class="pre">debug</span></code>, <code class="docutils literal notranslate"><span class="pre">info</span></code>, <code class="docutils literal notranslate"><span class="pre">warning</span></code>, <code class="docutils literal notranslate"><span class="pre">error</span></code>, <code class="docutils literal notranslate"><span class="pre">critical</span></code>. Default: <code class="docutils literal notranslate"><span class="pre">info</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>log_attrs</p></td>
+<td><p>A list of attributes from the returned data to log. Required.</p></td>
+</tr>
+</tbody>
+</table>
+<p>This module is primarily intended for test and development, so it is not enabled by default.</p>
+</section>
+</section>
+<section id="custom-actions">
+<h3 id="custom-actions">Custom actions<a class="headerlink" href="#custom-actions" title="Permalink to this headline">¶</a></h3>
+<p>Custom actions can be included through python modules.
+This is configured through the <code class="docutils literal notranslate"><span class="pre">SCHEDULED_QUERY_MODULES</span></code> setting, which is a comma separated list, with a default of <code class="docutils literal notranslate"><span class="pre">reporting.scheduled_query_modules.sqs,reporting.scheduled_query_modules.slack</span></code>.</p>
+<p>The custom action module must implement the action ModuleInterface:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ModuleInterface</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Type interface for modules.</span>
+<span class="sd">    """</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">action_name</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">"""</span>
+<span class="sd">        The name of this action module, which will be referenced from within the</span>
+<span class="sd">        scheduled query configuration, via the ``action_type`` setting. For example:</span>
+
+<span class="sd">        .. highlight:: yaml</span>
+
+<span class="sd">              images-with-no-scan:</span>
+<span class="sd">                name: K8s container images with no vulnerability scans</span>
+<span class="sd">                cypher: k8s-images-without-scans</span>
+<span class="sd">                watch_scans:</span>
+<span class="sd">                  - grouptype: KubernetesCluster</span>
+<span class="sd">                    syncedtype: KubernetesCluster</span>
+<span class="sd">                enabled: True</span>
+<span class="sd">                actions:</span>
+<span class="sd">                  # this will match an action module with the action_name of sqs</span>
+<span class="sd">                  - action_type: sqs</span>
+<span class="sd">                    action_config:</span>
+<span class="sd">                      sqs_queue: k8s-image-scanner</span>
+
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="s2">""</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">config</span><span class="p">:</span> <span class="n">ReportingConfig</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">"""</span>
+<span class="sd">        Called when the scheduled queries worker is started. This function</span>
+<span class="sd">        can be used for any setup that your module may need to do, like creating</span>
+<span class="sd">        databases or queues in development, etc.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">handle_results</span><span class="p">(</span>
+        <span class="n">scheduled_query_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">action</span><span class="p">:</span> <span class="n">ScheduledQueryAction</span><span class="p">,</span>
+        <span class="n">results</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">"""</span>
+<span class="sd">        Called when a schedule query configured to use this module has results.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span>
+</pre></div>
+</div>
+<p>Note that the above is a type hint for a module itself.
+So, these functions should be implemented directly in the module, and not as a subclass.
+For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">action_name</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s2">"print"</span>
+
+
+<span class="k">def</span> <span class="nf">setup</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">return</span>
+
+
+<span class="k">def</span> <span class="nf">handle_results</span><span class="p">(</span>
+    <span class="n">scheduled_query_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">action</span><span class="p">:</span> <span class="n">ScheduledQueryAction</span><span class="p">,</span>
+    <span class="n">results</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Settings for the modules should be fetched within the module itself, for example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reporting.utils.settings</span> <span class="kn">import</span> <span class="n">str_env</span>
+
+<span class="n">_SLACK_OAUTH_BOT_TOKEN</span> <span class="o">=</span> <span class="n">str_env</span><span class="p">(</span><span class="s2">"SLACK_OAUTH_BOT_TOKEN"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="run-the-schedule-queries-worker">
+<h2 id="run-the-schedule-queries-worker">Run the <code class="docutils literal notranslate"><span class="pre">schedule-queries</span></code> worker<a class="headerlink" href="#run-the-schedule-queries-worker" title="Permalink to this headline">¶</a></h2>
+<p>The worker can be run as a flask CLI command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$&gt; <span class="nb">export</span> <span class="nv">FLASK_APP</span><span class="o">=</span>reporting.reporting.scheduled_queries
+$&gt; flask worker schedule-queries
+</pre></div>
+</div>
+<p>This worker runs until it is explicitly terminated.</p>
+</section>
+</section>
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="schema.html" title="Dashboard Schema"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> Dashboard Schema </span>
+              </div>
+            </a>
+          
+          
+            <a href="stats.html" title="Pushing Panel Data to Statsd"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> Pushing Panel Data to Statsd </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2022-2022, PayPay.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

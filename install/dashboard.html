@@ -1,0 +1,1231 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Dashboard Configuration &#8212; Seizu Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dashboard Schema" href="schema.html" />
+    <link rel="prev" title="Backend Installation &amp; Configuration" href="backend.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#install/dashboard" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="Seizu Documentation  documentation"
+           class="md-header-nav__button md-logo">
+          
+              <img src="../_static/favicon.png" height="26"
+                   alt="Seizu Documentation documentation logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">Seizu Documentation  documentation</span>
+          <span class="md-header-nav__topic"> Dashboard Configuration </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/paypay/seizu" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    seizu
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+            
+            <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">Seizu</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="Seizu Documentation documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/favicon.png" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="Seizu Documentation documentation">Seizu Documentation  documentation</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/paypay/seizu" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    seizu
+  </div>
+</a>
+    </div>
+  
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Installation &amp; Configuration</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="backend.html" class="md-nav__link">Backend Installation & Configuration</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Dashboard Configuration </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">Dashboard Configuration</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#install-dashboard--page-root" class="md-nav__link">Dashboard Configuration</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#navigation-sections" class="md-nav__link">Navigation Sections</a>
+        </li>
+        <li class="md-nav__item"><a href="#configuration-version" class="md-nav__link">Configuration version</a>
+        </li>
+        <li class="md-nav__item"><a href="#panels" class="md-nav__link">Panels</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#count" class="md-nav__link">count</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#example" class="md-nav__link">Example</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#progress" class="md-nav__link">progress</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id2" class="md-nav__link">Example</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#pie" class="md-nav__link">pie</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id4" class="md-nav__link">Example</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#bar" class="md-nav__link">bar</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id6" class="md-nav__link">Example</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#table" class="md-nav__link">table</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id8" class="md-nav__link">Example</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#vertical-table" class="md-nav__link">vertical-table</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id10" class="md-nav__link">Example</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#markdown" class="md-nav__link">markdown</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id11" class="md-nav__link">Example</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#inputs" class="md-nav__link">Inputs</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#autocomplete" class="md-nav__link">autocomplete</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id12" class="md-nav__link">Example</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#text" class="md-nav__link">text</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id13" class="md-nav__link">Example</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#example-configuration" class="md-nav__link">Example Configuration</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/install/dashboard.md.txt">Show Source</a> </li>
+
+  </ul>
+</nav>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#navigation-sections" class="md-nav__link">Navigation Sections</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#configuration-version" class="md-nav__link">Configuration version</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#panels" class="md-nav__link">Panels</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#inputs" class="md-nav__link">Inputs</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#example-configuration" class="md-nav__link">Example Configuration</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="schema.html" class="md-nav__link">Dashboard Schema</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="scheduled-queries.html" class="md-nav__link">Scheduled Queries</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="stats.html" class="md-nav__link">Pushing Panel Data to Statsd</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Development</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../dev/docker-compose.html" class="md-nav__link">docker-compose</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../dev/dependencies.html" class="md-nav__link">Managing Dependencies</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../dev/test.html" class="md-nav__link">Running Tests</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../dev/contributing.html" class="md-nav__link">Contributing</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Releases</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../changelog.html" class="md-nav__link">Changelog</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Get In Touch</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../contact/security.html" class="md-nav__link">Security</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../contact/code-of-conduct.html" class="md-nav__link">Contributor Covenant Code of Conduct</a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#install-dashboard--page-root" class="md-nav__link">Dashboard Configuration</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#navigation-sections" class="md-nav__link">Navigation Sections</a>
+        </li>
+        <li class="md-nav__item"><a href="#configuration-version" class="md-nav__link">Configuration version</a>
+        </li>
+        <li class="md-nav__item"><a href="#panels" class="md-nav__link">Panels</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#count" class="md-nav__link">count</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#example" class="md-nav__link">Example</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#progress" class="md-nav__link">progress</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id2" class="md-nav__link">Example</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#pie" class="md-nav__link">pie</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id4" class="md-nav__link">Example</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#bar" class="md-nav__link">bar</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id6" class="md-nav__link">Example</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#table" class="md-nav__link">table</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id8" class="md-nav__link">Example</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#vertical-table" class="md-nav__link">vertical-table</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id10" class="md-nav__link">Example</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#markdown" class="md-nav__link">markdown</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id11" class="md-nav__link">Example</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#inputs" class="md-nav__link">Inputs</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#autocomplete" class="md-nav__link">autocomplete</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id12" class="md-nav__link">Example</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#text" class="md-nav__link">text</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id13" class="md-nav__link">Example</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#example-configuration" class="md-nav__link">Example Configuration</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/install/dashboard.md.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  <section id="dashboard-configuration">
+<h1 id="install-dashboard--page-root">Dashboard Configuration<a class="headerlink" href="#install-dashboard--page-root" title="Permalink to this headline">¶</a></h1>
+<section id="navigation-sections">
+<h2 id="navigation-sections">Navigation Sections<a class="headerlink" href="#navigation-sections" title="Permalink to this headline">¶</a></h2>
+<p>Seizu’s navigation currently supports a dashboard, and an arbitrary number of reports.
+The dashboard is the landing page, and is meant as a general overview of the data in your graph.
+Reports are topic-specific views of your graph data.</p>
+<p>Both dashboards and reports use a list of rows, which contain a list of panels; both are grid-based.
+Rows are rendered in the order specified in the configuration, and panels within rows are also rendered in the order specified.</p>
+</section>
+<section id="configuration-version">
+<h2 id="configuration-version">Configuration version<a class="headerlink" href="#configuration-version" title="Permalink to this headline">¶</a></h2>
+<p>The dashboard configuration file has a <code class="docutils literal notranslate"><span class="pre">version</span></code> field that defines the format of the configuration file.
+This is used so that we can make changes to the file format, when necessary.
+This field is an int, and the current version is <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+</section>
+<section id="panels">
+<h2 id="panels">Panels<a class="headerlink" href="#panels" title="Permalink to this headline">¶</a></h2>
+<p>Seizu supports various panel types that can be used to visualize graph data.
+See <a class="reference external" href="schema.html#panel">the Panel schema</a> for more detailed info about specific fields.</p>
+<section id="count">
+<h3 id="count">count<a class="headerlink" href="#count" title="Permalink to this headline">¶</a></h3>
+<p>To simply display a count of a particular query, use a <code class="docutils literal notranslate"><span class="pre">count</span></code> panel.</p>
+<a class="reference external image-reference" href="/images/count-panel.png"><img alt="a count panel example" src="../_images/count-panel.png"/></a>
+<table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cypher</p></td>
+<td><p>A cypher query to use for this panel. This is a reference to a query in the queries configuration section. The query must return the count as <code class="docutils literal notranslate"><span class="pre">total</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>details_cypher</p></td>
+<td><p>A cypher to use for displaying a table view of the data, in a details view. This is a reference to a query in the queries configuration section. The query must return the rows as <code class="docutils literal notranslate"><span class="pre">details</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>params</p></td>
+<td><p>A list of parameters to pass into the query. See <a class="reference external" href="schema.html#panelparam">the PanelParam schema</a> for more info.</p></td>
+</tr>
+<tr class="row-odd"><td><p>caption</p></td>
+<td><p>The caption to show as the title of this panel.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p>The type of panel. <code class="docutils literal notranslate"><span class="pre">count</span></code>, for this panel type.</p></td>
+</tr>
+<tr class="row-odd"><td><p>metric</p></td>
+<td><p>The statsd metric to push for this panel, if stats pushing is enabled.</p></td>
+</tr>
+<tr class="row-even"><td><p>size</p></td>
+<td><p>The width of this panel.</p></td>
+</tr>
+</tbody>
+</table>
+<section id="example">
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cves</span><span class="w"></span>
+<span class="w">  </span><span class="nt">details_cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cves-details</span><span class="w"></span>
+<span class="w">  </span><span class="nt">caption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Total CVEs</span><span class="w"></span>
+<span class="w">  </span><span class="nt">metric</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cves.total</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">count</span><span class="w"></span>
+<span class="w">  </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="progress">
+<h3 id="progress">progress<a class="headerlink" href="#progress" title="Permalink to this headline">¶</a></h3>
+<p>To display a progress wheel, and x/y display of a particular query, use a <code class="docutils literal notranslate"><span class="pre">progress</span></code> panel.
+By default, this panel will color the progress data based on a threshold of &lt;70% error, &gt;70% &lt;100% primary, 100% success.</p>
+<a class="reference external image-reference" href="/images/progress-panel.png"><img alt="a progress panel example" src="../_images/progress-panel.png"/></a>
+<table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cypher</p></td>
+<td><p>A cypher query to use for this panel. This is a reference to a query in the queries configuration section. The query must return the counts as <code class="docutils literal notranslate"><span class="pre">numerator</span></code> and <code class="docutils literal notranslate"><span class="pre">denominator</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>details_cypher</p></td>
+<td><p>A cypher to use for displaying a table view of the data, in a details view. This is a reference to a query in the queries configuration section. The query must return the rows as <code class="docutils literal notranslate"><span class="pre">details</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>params</p></td>
+<td><p>A list of parameters to pass into the query. See <a class="reference external" href="schema.html#panelparam">the PanelParam schema</a> for more info.</p></td>
+</tr>
+<tr class="row-odd"><td><p>caption</p></td>
+<td><p>The caption to show as the title of this panel.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p>The type of panel. <code class="docutils literal notranslate"><span class="pre">progress</span></code>, for this panel type.</p></td>
+</tr>
+<tr class="row-odd"><td><p>threshold</p></td>
+<td><p>The lower threshold percentage to consider this result an error. Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to disable threshold. Default: <code class="docutils literal notranslate"><span class="pre">70</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>metric</p></td>
+<td><p>The statsd metric to push for this panel, if stats pushing is enabled.</p></td>
+</tr>
+<tr class="row-odd"><td><p>size</p></td>
+<td><p>The width of this panel.</p></td>
+</tr>
+</tbody>
+</table>
+<section id="id2">
+<h4 id="id2">Example<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cve-by-severity</span><span class="w"></span>
+<span class="w">  </span><span class="nt">details_cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cve-by-severity-details</span><span class="w"></span>
+<span class="w">  </span><span class="nt">params</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">severity</span><span class="w"></span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CRITICAL</span><span class="w"></span>
+<span class="w">  </span><span class="nt">caption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Critical CVEs</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">progress</span><span class="w"></span>
+<span class="w">  </span><span class="nt">threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+<span class="w">  </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="pie">
+<h3 id="pie">pie<a class="headerlink" href="#pie" title="Permalink to this headline">¶</a></h3>
+<p>To display a pie graph, use a <code class="docutils literal notranslate"><span class="pre">pie</span></code> panel.</p>
+<a class="reference external image-reference" href="/images/pie-panel-legend-column.png"><img alt="a pie panel example with a column legend" src="../_images/pie-panel-legend-column.png"/></a>
+<table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cypher</p></td>
+<td><p>A cypher query to use for this panel. This is a reference to a query in the queries configuration section. The query must return rows, formatted as a dictionary, with keys <code class="docutils literal notranslate"><span class="pre">id</span></code> and <code class="docutils literal notranslate"><span class="pre">value</span></code>, as a detail; example: <code class="docutils literal notranslate"><span class="pre">RETURN</span> <span class="pre">{id:</span> <span class="pre">c.base_severity,</span> <span class="pre">value:</span> <span class="pre">count(c.id)}</span> <span class="pre">AS</span> <span class="pre">details</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>details_cypher</p></td>
+<td><p>A cypher to use for displaying a table view of the data, in a details view. This is a reference to a query in the queries configuration section. The query must return the rows as <code class="docutils literal notranslate"><span class="pre">details</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>params</p></td>
+<td><p>A list of parameters to pass into the query. See <a class="reference external" href="schema.html#panelparam">the PanelParam schema</a> for more info.</p></td>
+</tr>
+<tr class="row-odd"><td><p>caption</p></td>
+<td><p>The caption to show as the title of this panel.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p>The type of panel. <code class="docutils literal notranslate"><span class="pre">pie</span></code>, for this panel type.</p></td>
+</tr>
+<tr class="row-odd"><td><p>pie_settings</p></td>
+<td><p>An object of settings specific to pie panels.</p></td>
+</tr>
+<tr class="row-even"><td><p>pie_settings.legend</p></td>
+<td><p>Orientation of the legend. <code class="docutils literal notranslate"><span class="pre">row</span></code> or <code class="docutils literal notranslate"><span class="pre">column</span></code>. If legend is not set, no legend will be shown, and arc labels will be shown instead.</p></td>
+</tr>
+<tr class="row-odd"><td><p>size</p></td>
+<td><p>The width of this panel.</p></td>
+</tr>
+</tbody>
+</table>
+<section id="id4">
+<h4 id="id4">Example<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cves-by-severity-as-rows</span><span class="w"></span>
+<span class="w">  </span><span class="nt">caption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Critical CVEs</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pie</span><span class="w"></span>
+<span class="w">  </span><span class="nt">pie_settings</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">legend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">column</span><span class="w"></span>
+<span class="w">  </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="bar">
+<h3 id="bar">bar<a class="headerlink" href="#bar" title="Permalink to this headline">¶</a></h3>
+<p>To display a bar graph, use a <code class="docutils literal notranslate"><span class="pre">bar</span></code> panel.</p>
+<a class="reference external image-reference" href="/images/bar-panel.png"><img alt="a bar panel example" src="../_images/bar-panel.png"/></a>
+<table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cypher</p></td>
+<td><p>A cypher query to use for this panel. This is a reference to a query in the queries configuration section. The query must return rows, formatted as a dictionary, with keys <code class="docutils literal notranslate"><span class="pre">id</span></code> and <code class="docutils literal notranslate"><span class="pre">value</span></code>, as a detail; example: <code class="docutils literal notranslate"><span class="pre">RETURN</span> <span class="pre">{id:</span> <span class="pre">c.base_severity,</span> <span class="pre">value:</span> <span class="pre">count(c.id)}</span> <span class="pre">AS</span> <span class="pre">details</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>details_cypher</p></td>
+<td><p>A cypher to use for displaying a table view of the data, in a details view. This is a reference to a query in the queries configuration section. The query must return the rows as <code class="docutils literal notranslate"><span class="pre">details</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>params</p></td>
+<td><p>A list of parameters to pass into the query. See <a class="reference external" href="schema.html#panelparam">the PanelParam schema</a> for more info.</p></td>
+</tr>
+<tr class="row-odd"><td><p>caption</p></td>
+<td><p>The caption to show as the title of this panel.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p>The type of panel. <code class="docutils literal notranslate"><span class="pre">bar</span></code>, for this panel type.</p></td>
+</tr>
+<tr class="row-odd"><td><p>bar_settings</p></td>
+<td><p>An object of settings specific to bar panels.</p></td>
+</tr>
+<tr class="row-even"><td><p>bar_settings.legend</p></td>
+<td><p>Orientation of the legend. <code class="docutils literal notranslate"><span class="pre">row</span></code> or <code class="docutils literal notranslate"><span class="pre">column</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>size</p></td>
+<td><p>The width of this panel.</p></td>
+</tr>
+</tbody>
+</table>
+<section id="id6">
+<h4 id="id6">Example<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cves-by-severity-as-rows</span><span class="w"></span>
+<span class="w">  </span><span class="nt">caption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Critical CVEs</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bar</span><span class="w"></span>
+<span class="w">  </span><span class="nt">bar_settings</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">legend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">column</span><span class="w"></span>
+<span class="w">  </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="table">
+<h3 id="table">table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h3>
+<p>To display rows in a paged table, use a <code class="docutils literal notranslate"><span class="pre">table</span></code> panel.</p>
+<a class="reference external image-reference" href="/images/table-panel.png"><img alt="a table panel example" src="../_images/table-panel.png"/></a>
+<table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cypher</p></td>
+<td><p>A cypher query to use for this panel. This is a reference to a query in the queries configuration section. The query must return the rows as <code class="docutils literal notranslate"><span class="pre">details</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>params</p></td>
+<td><p>A list of parameters to pass into the query. See <a class="reference external" href="schema.html#panelparam">the PanelParam schema</a> for more info.</p></td>
+</tr>
+<tr class="row-even"><td><p>caption</p></td>
+<td><p>The caption to show as the title of this panel.</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p>The type of panel. <code class="docutils literal notranslate"><span class="pre">table</span></code>, for this panel type.</p></td>
+</tr>
+<tr class="row-even"><td><p>size</p></td>
+<td><p>The width of this panel.</p></td>
+</tr>
+</tbody>
+</table>
+<section id="id8">
+<h4 id="id8">Example<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CVEs</span><span class="w"></span>
+<span class="w">  </span><span class="nt">panels</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cve-search</span><span class="w"></span>
+<span class="w">      </span><span class="nt">params</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cveId</span><span class="w"></span>
+<span class="w">          </span><span class="nt">input_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cve-id-autocomplete-input</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">table</span><span class="w"></span>
+<span class="w">      </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="vertical-table">
+<h3 id="vertical-table">vertical-table<a class="headerlink" href="#vertical-table" title="Permalink to this headline">¶</a></h3>
+<p>To display rows in a less-dense, vertical per-row view, use a <code class="docutils literal notranslate"><span class="pre">vertical-table</span></code> panel.
+Note: the caption per-row is set via the <code class="docutils literal notranslate"><span class="pre">table_id</span></code> field, and if unset, will display <code class="docutils literal notranslate"><span class="pre">undefined</span></code></p>
+<a class="reference external image-reference" href="/images/vertical-table-panel.png"><img alt="a vertical table panel example" src="../_images/vertical-table-panel.png"/></a>
+<table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cypher</p></td>
+<td><p>A cypher query to use for this panel. This is a reference to a query in the queries configuration section. The query must return the rows as <code class="docutils literal notranslate"><span class="pre">details</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>params</p></td>
+<td><p>A list of parameters to pass into the query. See <a class="reference external" href="schema.html#panelparam">the PanelParam schema</a> for more info.</p></td>
+</tr>
+<tr class="row-even"><td><p>caption</p></td>
+<td><p>The caption to show as the title of this panel.</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p>The type of panel. <code class="docutils literal notranslate"><span class="pre">vertical-table</span></code>, for this panel type.</p></td>
+</tr>
+<tr class="row-even"><td><p>table_id</p></td>
+<td><p>The attribute inside of the <code class="docutils literal notranslate"><span class="pre">details</span></code> dictionary to use as a caption for each row. If not set, row captions will show as <code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>size</p></td>
+<td><p>The width of this panel.</p></td>
+</tr>
+</tbody>
+</table>
+<section id="id10">
+<h4 id="id10">Example<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CVEs</span><span class="w"></span>
+<span class="w">  </span><span class="nt">panels</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cve-search</span><span class="w"></span>
+<span class="w">      </span><span class="nt">params</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cveId</span><span class="w"></span>
+<span class="w">          </span><span class="nt">input_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cve-id-autocomplete-input</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vertical-table</span><span class="w"></span>
+<span class="w">      </span><span class="nt">table_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">id</span><span class="w"></span>
+<span class="w">      </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="markdown">
+<h3 id="markdown">markdown<a class="headerlink" href="#markdown" title="Permalink to this headline">¶</a></h3>
+<p>To render markdown, use a <code class="docutils literal notranslate"><span class="pre">markdown</span></code> panel.</p>
+<a class="reference external image-reference" href="/images/markdown-panel.png"><img alt="a markdown panel example" src="../_images/markdown-panel.png"/></a>
+<table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>markdown</p></td>
+<td><p>The markdown to render.</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p>The type of panel. <code class="docutils literal notranslate"><span class="pre">markdown</span></code>, for this panel type.</p></td>
+</tr>
+<tr class="row-even"><td><p>markdown_settings</p></td>
+<td><p>An object of settings specific to pie panels.</p></td>
+</tr>
+<tr class="row-odd"><td><p>markdown_settings.variables</p></td>
+<td><p>A list of variables as dictionaries (with keys <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">cypher</span></code>), used to inject variables into the markdown, for use with markdoc functions. See the <a class="reference external" href="schema.html#markdownpanelsettingsvariables">the MarkdownPanelSettingsVariables schema</a> for more information.</p></td>
+</tr>
+<tr class="row-even"><td><p>size</p></td>
+<td><p>The width of this panel.</p></td>
+</tr>
+</tbody>
+</table>
+<p>We’re using markdoc for markdown rendering, which supports variables, functions, etc. in the markdown. Currently, we support injecting variables from queries, and using those variables in functions.</p>
+<p>Currently supported markdoc functions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: Return the value of a specified key from the specified variable. Example (return <code class="docutils literal notranslate"><span class="pre">total</span></code> from <code class="docutils literal notranslate"><span class="pre">cves</span></code>): <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">value("cves",</span> <span class="pre">"total")</span> <span class="pre">%}</span></code></p></li>
+</ul>
+<section id="id11">
+<h4 id="id11">Example<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">markdown</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span><span class="w"></span>
+<span class="w">    </span><span class="no">## CVE info</span><span class="w"></span>
+<span class="w">    </span><span class="no">1. [CVE-2021-44228](https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHELOGGINGLOG4J-2314720): Remote Code Execution (RCE), affects log4j versions below 2.15.0</span><span class="w"></span>
+<span class="w">    </span><span class="no">1. [CVE-2021-4104](https://security.snyk.io/vuln/SNYK-JAVA-LOG4J-2316893): Arbitrary Code Execution, affects log4j 1.x</span><span class="w"></span>
+<span class="w">    </span><span class="no">1. [CVE-2021-45046](https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHELOGGINGLOG4J-2320014): Remote Code Execution (RCE), affects log4j versions below 2.16.0</span><span class="w"></span>
+<span class="w">    </span><span class="no">1. [CVE-2021-45105](https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHELOGGINGLOG4J-2321524): Denial of Service (DoS), affects log4j versions below 2.17.0</span><span class="w"></span>
+<span class="w">    </span><span class="no">1. [CVE-2021-44832](https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHELOGGINGLOG4J-2327339): Arbitrary Code Execution (RCE), affects log4j versions below 2.17.1</span><span class="w"></span>
+
+<span class="w">    </span><span class="no">## Recommended action</span><span class="w"></span>
+<span class="w">    </span><span class="no">Upgrade to log4j 2.17.1 or higher.</span><span class="w"></span>
+
+<span class="w">    </span><span class="no">## Current counts</span><span class="w"></span>
+<span class="w">    </span><span class="no">Total: {% value("cves", "total") %}</span><span class="w"></span>
+<span class="w">  </span><span class="nt">markdown_settings</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cves</span><span class="w"></span>
+<span class="w">        </span><span class="nt">cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">log4shell-cves-total</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">markdown</span><span class="w"></span>
+<span class="w">  </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="inputs">
+<h2 id="inputs">Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<p>Reports can define inputs that can be used to pass parameters into queries used in panels in the report.
+These will be rendered at the top of the report, in the order specified in the configuration.</p>
+<section id="autocomplete">
+<h3 id="autocomplete">autocomplete<a class="headerlink" href="#autocomplete" title="Permalink to this headline">¶</a></h3>
+<p>An <code class="docutils literal notranslate"><span class="pre">autocomplete</span></code> input can be used to use results queried from the graph as inputs to panels.
+End-users can select through a dropdown list of the values, or can type to search/autocomplete a value.</p>
+<a class="reference external image-reference" href="/images/autocomplete-input.png"><img alt="an autocomplete input example" src="../_images/autocomplete-input.png"/></a>
+<table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>input_id</p></td>
+<td><p>An ID for this input, that can be referenced from the params section of a panel.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cypher</p></td>
+<td><p>A cypher query used to return the relevant data. This is <strong>not</strong> a reference to a query, but the actual query to run. It’s recommended to use <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code> for the values returned. The query must return the data as <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td><p>A dictionary with the default <code class="docutils literal notranslate"><span class="pre">label</span></code> and <code class="docutils literal notranslate"><span class="pre">value</span></code> for the input, when not set.</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p>The type of input. <code class="docutils literal notranslate"><span class="pre">autocomplete</span></code>, for this input type.</p></td>
+</tr>
+<tr class="row-even"><td><p>size</p></td>
+<td><p>The width of this input.</p></td>
+</tr>
+</tbody>
+</table>
+<section id="id12">
+<h4 id="id12">Example<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">input_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cve-severity-autocomplete-input</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cypher</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;-</span><span class="w"></span>
+<span class="w">    </span><span class="no">MATCH (c:CVE)</span><span class="w"></span>
+<span class="w">    </span><span class="no">RETURN DISTINCT c.base_severity AS value</span><span class="w"></span>
+<span class="w">  </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CVE Severity</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">autocomplete</span><span class="w"></span>
+<span class="w">  </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="text">
+<h3 id="text">text<a class="headerlink" href="#text" title="Permalink to this headline">¶</a></h3>
+<p>A <code class="docutils literal notranslate"><span class="pre">text</span></code> input can be used for user-defined input for panel query parameters.</p>
+<a class="reference external image-reference" href="/images/text-input.png"><img alt="an text input example" src="../_images/text-input.png"/></a>
+<table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>input_id</p></td>
+<td><p>An ID for this input, that can be referenced from the params section of a panel.</p></td>
+</tr>
+<tr class="row-odd"><td><p>default</p></td>
+<td><p>A dictionary with the default <code class="docutils literal notranslate"><span class="pre">value</span></code> for the input, when not set.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p>The type of input. <code class="docutils literal notranslate"><span class="pre">text</span></code>, for this input type.</p></td>
+</tr>
+<tr class="row-odd"><td><p>size</p></td>
+<td><p>The width of this input.</p></td>
+</tr>
+</tbody>
+</table>
+<section id="id13">
+<h4 id="id13">Example<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">input_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cve-id-regex</span><span class="w"></span>
+<span class="w">  </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Regex</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
+<span class="w">  </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="example-configuration">
+<h2 id="example-configuration">Example Configuration<a class="headerlink" href="#example-configuration" title="Permalink to this headline">¶</a></h2>
+<p>All panel types have an info button, which will show extra details about the panel, such as the query used, the parameters to the query, metrics that may be pushed with it, etc.
+Non-table panel types can also show a query related to the panel as more details, in the details view.</p>
+<a class="reference external image-reference" href="/images/details-view.png"><img alt="a details view example" src="../_images/details-view.png"/></a>
+<p>Example configuration</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+
+<span class="nt">queries</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cves-total</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span><span class="w"></span>
+<span class="w">    </span><span class="no">MATCH (c:CVE)</span><span class="w"></span>
+<span class="w">    </span><span class="no">RETURN count(c.id) AS total</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cves-severity-of-total</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span><span class="w"></span>
+<span class="w">    </span><span class="no">MATCH (c:CVE)</span><span class="w"></span>
+<span class="w">    </span><span class="no">WITH COUNT(DISTINCT c.id) AS denominator</span><span class="w"></span>
+<span class="w">    </span><span class="no">MATCH (c:CVE)</span><span class="w"></span>
+<span class="w">    </span><span class="no">WHERE c.base_severity = $base_severity</span><span class="w"></span>
+<span class="w">    </span><span class="no">RETURN count(DISTINCT c.id) AS numerator, denominator</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cves-severity-of-total-details</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span><span class="w"></span>
+<span class="w">    </span><span class="no">MATCH (c:CVE)</span><span class="w"></span>
+<span class="w">    </span><span class="no">WHERE c.base_severity = $base_severity</span><span class="w"></span>
+<span class="w">    </span><span class="no">RETURN c AS details</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cves-by-severity-as-rows</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span><span class="w"></span>
+<span class="w">    </span><span class="no">MATCH (c:CVE)</span><span class="w"></span>
+<span class="w">    </span><span class="no">RETURN {id: c.base_severity, value: count(c.id)} AS details</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cves</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span><span class="w"></span>
+<span class="w">    </span><span class="no">MATCH (c:CVE)</span><span class="w"></span>
+<span class="w">    </span><span class="no">WHERE c.base_severity =~ ($base_severity)</span><span class="w"></span>
+<span class="w">    </span><span class="no">RETURN DISTINCT {</span><span class="w"></span>
+<span class="w">      </span><span class="no">id: c.id,</span><span class="w"></span>
+<span class="w">      </span><span class="no">base_severity: c.base_severity,</span><span class="w"></span>
+<span class="w">      </span><span class="no">description: c.description_en,</span><span class="w"></span>
+<span class="w">      </span><span class="no">published_date: c.published_date</span><span class="w"></span>
+<span class="w">    </span><span class="no">} AS details</span><span class="w"></span>
+<span class="w">    </span><span class="no">ORDER BY details.severity DESC</span><span class="w"></span>
+<span class="w">  </span><span class="nt">recent-cves</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span><span class="w"></span>
+<span class="w">    </span><span class="no">MATCH (s:SyncMetadata)</span><span class="w"></span>
+<span class="w">    </span><span class="no">WHERE s.grouptype = "CVE" AND s.syncedtype IN $syncedtype</span><span class="w"></span>
+<span class="w">    </span><span class="no">WITH datetime({epochSeconds: s.lastupdated}) - duration({hours: 24}) AS feedupdatetime</span><span class="w"></span>
+<span class="w">    </span><span class="no">MATCH (c:CVE)</span><span class="w"></span>
+<span class="w">    </span><span class="no">WHERE (datetime(c.published_date)) &gt; feedupdatetime AND c.base_severity IN $base_severity</span><span class="w"></span>
+<span class="w">    </span><span class="no">RETURN {id: c.id, base_severity: c.base_severity, base_score: c.base_score, description: c.description_en} AS details</span><span class="w"></span>
+
+<span class="nt">dashboard</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">rows</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CVEs as count and progress panels</span><span class="w"></span>
+<span class="w">      </span><span class="nt">panels</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cves-total</span><span class="w"></span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">count</span><span class="w"></span>
+<span class="w">          </span><span class="nt">caption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Total CVEs</span><span class="w"></span>
+<span class="w">          </span><span class="nt">metric</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cve.count</span><span class="w"></span>
+<span class="w">          </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.4</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cves-severity-of-total</span><span class="w"></span>
+<span class="w">          </span><span class="nt">details_cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cves-severity-of-total-details</span><span class="w"></span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">progress</span><span class="w"></span>
+<span class="w">          </span><span class="nt">params</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">base_severity</span><span class="w"></span>
+<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CRITICAL</span><span class="w"></span>
+<span class="w">          </span><span class="nt">caption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Critical CVEs</span><span class="w"></span>
+<span class="w">          </span><span class="nt">metric</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cve.progress</span><span class="w"></span>
+<span class="w">          </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.4</span><span class="w"></span>
+<span class="w">          </span><span class="nt">threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cves-severity-of-total</span><span class="w"></span>
+<span class="w">          </span><span class="nt">details_cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cves-severity-of-total-details</span><span class="w"></span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">progress</span><span class="w"></span>
+<span class="w">          </span><span class="nt">params</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">base_severity</span><span class="w"></span>
+<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HIGH</span><span class="w"></span>
+<span class="w">          </span><span class="nt">caption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">High CVEs</span><span class="w"></span>
+<span class="w">          </span><span class="nt">metric</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cve.progress</span><span class="w"></span>
+<span class="w">          </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.4</span><span class="w"></span>
+<span class="w">          </span><span class="nt">threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cves-severity-of-total</span><span class="w"></span>
+<span class="w">          </span><span class="nt">details_cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cves-severity-of-total-details</span><span class="w"></span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">progress</span><span class="w"></span>
+<span class="w">          </span><span class="nt">params</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">base_severity</span><span class="w"></span>
+<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MEDIUM</span><span class="w"></span>
+<span class="w">          </span><span class="nt">caption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Medium CVEs</span><span class="w"></span>
+<span class="w">          </span><span class="nt">metric</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cve.progress</span><span class="w"></span>
+<span class="w">          </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.4</span><span class="w"></span>
+<span class="w">          </span><span class="nt">threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cves-severity-of-total</span><span class="w"></span>
+<span class="w">          </span><span class="nt">details_cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cves-severity-of-total-details</span><span class="w"></span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">progress</span><span class="w"></span>
+<span class="w">          </span><span class="nt">params</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">base_severity</span><span class="w"></span>
+<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LOW</span><span class="w"></span>
+<span class="w">          </span><span class="nt">caption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Low CVEs</span><span class="w"></span>
+<span class="w">          </span><span class="nt">metric</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cve.progress</span><span class="w"></span>
+<span class="w">          </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.4</span><span class="w"></span>
+<span class="w">          </span><span class="nt">threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CVEs as pie, bar panels</span><span class="w"></span>
+<span class="w">      </span><span class="nt">panels</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cves-by-severity-as-rows</span><span class="w"></span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pie</span><span class="w"></span>
+<span class="w">          </span><span class="nt">caption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CVE severities</span><span class="w"></span>
+<span class="w">          </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cves-by-severity-as-rows</span><span class="w"></span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bar</span><span class="w"></span>
+<span class="w">          </span><span class="nt">caption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CVE severities</span><span class="w"></span>
+<span class="w">          </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span><span class="w"></span>
+
+<span class="nt">reports</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cves</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CVEs</span><span class="w"></span>
+<span class="w">    </span><span class="nt">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">input_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cve_base_severity</span><span class="w"></span>
+<span class="w">        </span><span class="nt">cypher</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span><span class="w"></span>
+<span class="w">          </span><span class="no">MATCH (c:CVE)</span><span class="w"></span>
+<span class="w">          </span><span class="no">RETURN DISTINCT c.base_severity AS value</span><span class="w"></span>
+<span class="w">        </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Base Severity</span><span class="w"></span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">autocomplete</span><span class="w"></span>
+<span class="w">        </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<span class="w">    </span><span class="nt">rows</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CVEs</span><span class="w"></span>
+<span class="w">        </span><span class="nt">panels</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cves</span><span class="w"></span>
+<span class="w">            </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">table</span><span class="w"></span>
+<span class="w">            </span><span class="nt">params</span><span class="p">:</span><span class="w"></span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">base_severity</span><span class="w"></span>
+<span class="w">                </span><span class="nt">input_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cve_base_severity</span><span class="w"></span>
+<span class="w">            </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12</span><span class="w"></span>
+
+<span class="nt">scheduled_queries</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">recent-cves-by-severity</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Recently published HIGH/CRITICAL CVEs</span><span class="w"></span>
+<span class="w">    </span><span class="nt">cypher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">recent-cves</span><span class="w"></span>
+<span class="w">    </span><span class="nt">params</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">syncedtype</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">recent</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">base_severity</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HIGH</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CRITICAL</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># every 1 minute, for testing</span><span class="w"></span>
+<span class="w">    </span><span class="nt">frequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="nt">actions</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">action_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">log</span><span class="w"></span>
+<span class="w">        </span><span class="nt">action_config</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">message</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Recently published HIGH/CRITICAL CVEs</span><span class="w"></span>
+<span class="w">          </span><span class="nt">level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">info</span><span class="w"></span>
+<span class="w">          </span><span class="nt">log_attrs</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">id</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">base_severity</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">base_score</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="backend.html" title="Backend Installation &amp; Configuration"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> Backend Installation &amp; Configuration </span>
+              </div>
+            </a>
+          
+          
+            <a href="schema.html" title="Dashboard Schema"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> Dashboard Schema </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2022-2022, PayPay.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>
