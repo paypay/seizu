@@ -39,32 +39,44 @@ const useStyles = makeStyles((theme) =>
       'article h1': {
         fontWeight: 500,
         fontSize: 29,
-        letterSpacing: '-0.24px'
+        letterSpacing: '-0.24px',
+        paddingTop: 10,
+        paddingBottom: 5
       },
       'article h2': {
         fontWeight: 500,
         fontSize: 24,
-        letterSpacing: '-0.06px'
+        letterSpacing: '-0.06px',
+        paddingTop: 10,
+        paddingBottom: 5
       },
       'article h3': {
         fontWeight: 500,
         fontSize: 20,
-        letterSpacing: '-0.05px'
+        letterSpacing: '-0.05px',
+        paddingTop: 10,
+        paddingBottom: 5
       },
       'article h4': {
         fontWeight: 500,
         fontSize: 16,
-        letterSpacing: '-0.05px'
+        letterSpacing: '-0.05px',
+        paddingTop: 10,
+        paddingBottom: 5
       },
       'article h5': {
         fontWeight: 500,
         fontSize: 16,
-        letterSpacing: '-0.05px'
+        letterSpacing: '-0.05px',
+        paddingTop: 10,
+        paddingBottom: 5
       },
       'article h6': {
         fontWeight: 500,
         fontSize: 14,
-        letterSpacing: '-0.05px'
+        letterSpacing: '-0.05px',
+        paddingTop: 10,
+        paddingBottom: 5
       }
     }
   })
