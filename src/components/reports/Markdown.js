@@ -10,7 +10,7 @@ export default function Markdown({ markdown, markdownSettings, queries }) {
   const [variableData, setVariableData] = React.useState({});
 
   React.useEffect(() => {
-    markdownSettings.variables.forEach((variable) => {
+    markdownSettings?.variables?.forEach((variable) => {
       const session = driver.session({
         database,
         defaultAccessMode: neo4j.session.READ
