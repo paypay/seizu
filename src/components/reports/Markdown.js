@@ -40,7 +40,7 @@ export default function Markdown({ markdown, markdownSettings, queries }) {
           session.close();
         });
     });
-  }, [markdownSettings]);
+  }, [markdown, markdownSettings, queries]);
 
   const value = {
     transform(parameters) {
